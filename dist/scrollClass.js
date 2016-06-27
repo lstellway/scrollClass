@@ -25,7 +25,13 @@
       options.current = $(window).scrollTop();
 
       // Offset from top class
-      if( options.current >= options.offset ){
+      if (typeof options.offset === 'function') {
+        options.tmp = options.offset();
+      } else {
+        options.tmp = options.offset;
+      }
+
+      if( options.current >= options.tmp ){
         options.target.addClass( options.class );
       } else {
         options.target.removeClass( options.class );
