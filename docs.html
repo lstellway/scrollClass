@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>scrollClass jQuery Plugin</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="all">
+</head>
+
+<style type="text/css">
+.navbar {
+    transition: all 0.5s;
+}
+.navbar.offset {
+    background: rgba(0,0,0,0.8);
+}
+.navbar.offset a,
+.navbar.offset a:hover,
+.navbar.offset .navbar-nav>li>a,
+.navbar.offset .navbar-nav>li>a:hover {
+    color: #fff;
+}
+.navbar.progressing {
+    top: -75px;
+}
+</style>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">scrollClass Demo</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Bower</a></li>
+                <li><a href="#about">Usage</a></li>
+                <li><a href="#contact">Options</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h1>scrollClass jQuery Plugin</h1>
+        <p>jQuery plugin that adds specified classes to an element based on scroll behavior.</p>
+    </div>
+</div>
+
+<div class="container">
+    <section id="install-with-bower" class="panel">
+        <h2>Install with Bower</h2>
+        <pre class="bg-info">bower install --save scrollClass</pre>
+        <p>&nbsp;</p>
+    </section>
+
+    <section id="usage" class="panel">
+        <h2>Usage</h2>
+        <p>Include jQuery</p>
+        <pre class="bg-info">&lt;script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;</pre>
+        <p>Include scrollClass</p>
+        <pre class="bg-info">&lt;script type="text/javascript" src="./dist/scrollClass.min.js"&gt;&lt;/script&gt;</pre>
+        <p>&nbsp;</p>
+    </section>
+
+    <section id="options" class="panel">
+        <h2>Options</h2>
+        <ul>
+            <li><b>target</b> (<a href="http://api.jquery.com/Types/#jQuery" target="_blank">jQuery Object</a>) [Default: <code>$(this)</code>]
+                <ul>
+                    <li>The targeted element to change classes.</li>
+                </ul>
+            </li>
+            <li><b>offset</b> (<a href="http://api.jquery.com/Types/#Number" target="_blank">number</a> | <a href="http://api.jquery.com/Types/#Function">function</a>) [Default <code>100</code>]
+                <ul>
+                    <li><i>number</i> - The number of pixels offset from the top of the document that determines when the CSS class passed in the <b>class</b> option will be toggled.</li>
+                    <li><i>function</i> - A function that returns a number value representing the number of pixels offset from the top of the document that determines when the CSS class passed in the <b>class</b> option will be toggled.</li>
+                </ul>
+            </li>
+            <li><b>downClass</b> (<a href="http://api.jquery.com/Types/#String" target="_blank">string</a>) [Default <code>"progressing"</code>]
+                <ul>
+                    <li>The class toggled on to the target element when the user is scrolling downward.</li>
+                </ul>
+            </li>
+            <li><b>upClass</b> (<a href="http://api.jquery.com/Types/#String" target="_blank">string</a>) [Default <code>"regressing"</code>]
+                <ul>
+                    <li>The class toggled on to the target element when the user is scrolling upward.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./dist/scrollClass.js"></script>
+<script type="text/javascript">
+(function(code){
+    code(window.jQuery, document, window);
+}(function($, document, window){
+    $(function(){
+        $('nav.navbar').scrollClass({
+            'class':'offset',
+            'offset':function(){
+                return $('#install-with-bower').offset().top - $('nav.navbar').outerHeight();
+            }
+        });
+    });
+}));
+</script>
+</body>
+</html>
