@@ -1,0 +1,23 @@
+{
+  "name": "scrollClass",
+  "version": "0.0.1",
+  "homepage": "https://github.com/loganstellway/scrollClass",
+  "authors": [
+    "Logan Stellway <logan@gigasavvy.com>"
+  ],
+  "description": "jQuery plugin that adds specified classes to an element based on scroll behavior",
+  "keywords": [
+    "scroll",
+    "class",
+    "jQuery",
+    "plugin"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
