@@ -25,8 +25,9 @@ Include scrollClass
 
   - **target** ([jQuery Object](http://api.jquery.com/Types/#jQuery)) [Default: `$(this)`]
     - The targeted element to change classes.
-  - **offset** ([number](http://api.jquery.com/Types/#Number)) [Default `100`]
+  - **offset** ([number](http://api.jquery.com/Types/#Number) | [function](http://api.jquery.com/Types/#Function)) [Default `100`]
     - _number_ - The number of pixels offset from the top of the document that determines when the CSS class passed in the **class** option will be toggled.
+    - _function_ - A function that returns a number value representing the number of pixels offset from the top of the document that determines when the CSS class passed in the **class** option will be toggled.
   - **downClass** ([string](http://api.jquery.com/Types/#String)) [Default `"progressing"`]
     - The class toggled on to the target element when the user is scrolling downward.
   - **upClass** ([string](http://api.jquery.com/Types/#String)) [Default `"regressing"`]
