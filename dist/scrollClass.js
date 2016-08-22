@@ -1,7 +1,15 @@
 /**
  * Add class to element based on scroll behavior
  */
-(function($) {
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module depending on jQuery.
+    require(['jquery'], factory);
+  } else {
+    // No AMD. Register plugin with global jQuery object.
+    factory(jQuery);
+  }
+}(function ($) {
   $.fn.scrollClass = function( options ){
     // Default options
     var d = {
@@ -62,4 +70,4 @@
 
     options.init();
   };
-}(window.jQuery));
+}));
