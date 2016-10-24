@@ -1,0 +1,19 @@
+{
+  "name": "jquery-scrollclass",
+  "version": "1.0.0",
+  "description": "jQuery plugin that adds specified classes to an element based on scroll behavior.",
+  "main": "docs.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loganstellway/scrollClass.git"
+  },
+  "author": "Logan Stellway <logan@gigasavvy.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loganstellway/scrollClass/issues"
+  },
+  "homepage": "https://github.com/loganstellway/scrollClass#readme"
+}
