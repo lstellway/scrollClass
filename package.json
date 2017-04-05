@@ -1,6 +1,5 @@
 {
   "name": "jquery-scrollclass",
-  "version": "1.0.0",
   "description": "jQuery plugin that adds specified classes to an element based on scroll behavior.",
   "main": "./dist/scrollClass.min.js",
   "scripts": {
